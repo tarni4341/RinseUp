@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 bg-[#FAF9FD];
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Floating soap bubble animations */
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-28px) translateX(12px) rotate(3deg) scale(1.03);
+  }
+  66% {
+    transform: translateY(-50px) translateX(-8px) rotate(-2deg) scale(0.98);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+.bubble-float {
+  animation: floatBubble ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean horizontal tabs */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
